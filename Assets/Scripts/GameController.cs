@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    /*
     //Public Variables
     public AudioClip startMusic;
     public AudioClip[] levelMusic = new AudioClip [2], bossMusic = new AudioClip[2];
@@ -72,10 +73,11 @@ public class GameController : MonoBehaviour
     private int[] musicTimer = { 0, 0 };
     private bool stopGrass = false;
     private int pauseTimer = 0, pauseTimerReset = 500;
-
+    */
     // Start is called before the first frame update
     void Start()
     {
+        /*
         volcanoSpawn = bossTimerCount + 200;
 
         //Set FanShot
@@ -104,22 +106,23 @@ public class GameController : MonoBehaviour
 
         //Create Player
         Instantiate(playerPrefab, playerRespawnPoint, transform.rotation);
+        */
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         try
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().attackSpeedSprites[0].transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().attackSpeedSpawn1.position;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().attackSpeedSprites[1].transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().attackSpeedSpawn2.position;
         } catch (System.NullReferenceException) { }
         catch (UnassignedReferenceException) { }
-        catch (MissingReferenceException) { }
+        catch (MissingReferenceException) { }*/
     }
 
     private void FixedUpdate()
-    {
+    {/*
         if (pause == false)
         {
             int time = (levelTimerBase - levelTimer) / 50;
@@ -256,7 +259,7 @@ public class GameController : MonoBehaviour
                     }
                     float z = 0.017607f * 6; //0.19016f; //this is the magic number to make the player move a certain amount on the y-axis. Equation: z = maxY/56.74433
                     float tempSpeed = Mathf.Sin(ToDeg(m));
-                    float speed = /*tempSpeed == -1 ? 0 :*/ tempSpeed * z;
+                    float speed = tempSpeed * z;
                     move.speed = move.jump < 0 ? new Vector2(-move.speedFactor / 2, speed) : new Vector2(move.speedFactor, speed);
                     ++move.rugurrTimer;
                     //Debug.Log(tempSpeed);
@@ -825,9 +828,9 @@ public class GameController : MonoBehaviour
             Application.Quit();
 #endif
             }
-        }
+        }*/
     }
-    public void runDestructionCommands(GameObject weapon, GameObject enemy)
+    /*public void runDestructionCommands(GameObject weapon, GameObject enemy)
     {
         if (enemy.name.Contains("Fan")) //If the hit enemy is a fan
         {
@@ -929,7 +932,7 @@ public class GameController : MonoBehaviour
         {
             highscoreText.text = "HI  " + a + score;
         }
-    }
+    }*/
 }
 /*
  //run a seperate function from rest of code in its own thread
