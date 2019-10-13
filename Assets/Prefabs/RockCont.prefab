@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 189687411884802041}
   - component: {fileID: 2462957314659968425}
-  - component: {fileID: 5976485969662847212}
   - component: {fileID: 8081341621348270584}
   - component: {fileID: 4816050060183594585}
   m_Layer: 0
@@ -59,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -153121905
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300476, guid: aa2e77c65c5eea942a1062618c7e0623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,24 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5976485969662847212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454849356529981315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad574209bb6f47e42b09d4d79df5ff5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: -0.05
-  fanTurned: 0
-  speed: {x: -0.05, y: 0}
-  fanTurnedUp: 0
-  line: 0
-  rugurrTimer: 0
 --- !u!50 &8081341621348270584
 Rigidbody2D:
   serializedVersion: 4
@@ -108,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454849356529981315}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -131,7 +113,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
