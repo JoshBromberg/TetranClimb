@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //NOTE: While moving fast, player will ocasionally fall through platforms
+    
     //Public Variables
     /*public float speed = 10.00f;
     public float speedBoost;
@@ -32,16 +34,21 @@ public class PlayerController : MonoBehaviour
     private float x, y;
     */
     [SerializeField]
-    private float speed = 5;
+    private float moveSpeed = 20, jumpSpeed = 800, maxSpeed = 15;
+    private float moveSpeedBase;
     private Rigidbody2D rBody;
-    private bool jump = false;
+    [SerializeField]
+    private bool grounded = false;
     [SerializeField]
     private GameObject[] feet = new GameObject[2];
+    [SerializeField]
+    private Transform[] groundCheck = new Transform[2];
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
+        moveSpeedBase = moveSpeed;
         /*game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         x = transform.position.x;
@@ -54,19 +61,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horiz = Input.GetAxis("Horizontal");
-        float vert = jump ? 0 : Input.GetAxis("Jump");
-        if (vert > 0)
-        {
-            jump = true;
-        }
-        //Move Player
-        Vector2 newVelocity = new Vector2(horiz, vert*speed); //Vector 2 holds 2 variables, an X and a Y
-        rBody.velocity = newVelocity * speed; //Move Player
-        if (rBody.velocity.y == 0)
-        {
-            jump = false;
-        }
+
         /*
         //FIRE!!!
         if (Input.GetKeyDown(KeyCode.Z) && weaponTimer == 0)
@@ -94,6 +89,26 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        foreach (Transform t in groundCheck)
+        {
+            if (Physics2D.Linecast(transform.position, t.position, 1 << LayerMask.NameToLayer("Foreground")))
+            {
+                grounded = true;
+                break;
+            }
+        }
+        moveSpeed = grounded ? moveSpeedBase : moveSpeedBase/2.5f;
+        float horiz = Input.GetAxis("Horizontal");
+        float vert = grounded ? Input.GetAxis("Jump") : 0;
+        rBody.AddForce(new Vector2(horiz * moveSpeed, vert * jumpSpeed));
+        if (vert > 0)
+        {
+            grounded = false;
+        }
+        if (grounded == false && rBody.velocity.magnitude > maxSpeed)
+        {
+            rBody.velocity = rBody.velocity.normalized*maxSpeed;
+        }
         /*
         //Get Player X and Y
         float horiz = Input.GetAxis("Horizontal");
