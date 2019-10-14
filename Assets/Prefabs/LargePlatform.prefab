@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3031497775112936341}
   - component: {fileID: 764981061128946117}
-  - component: {fileID: 6383111380764255636}
   - component: {fileID: 7666780898678932021}
   m_Layer: 0
   m_Name: LargePlatform
@@ -72,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1096819983
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300476, guid: aa2e77c65c5eea942a1062618c7e0623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,27 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6383111380764255636
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4360405074603881455}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &7666780898678932021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48, y: 0.08811879}
+  m_Size: {x: 2.36, y: 0.08811879}
   m_EdgeRadius: 0
 --- !u!1001 &2413823877543318677
 PrefabInstance:
@@ -218,9 +196,15 @@ PrefabInstance:
     - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1096819983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4816050060183594585, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
 --- !u!4 &2584582079418395500 stripped
 Transform:
@@ -313,9 +297,15 @@ PrefabInstance:
     - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1096819983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4816050060183594585, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
 --- !u!4 &3712023008070070360 stripped
 Transform:
@@ -408,9 +398,15 @@ PrefabInstance:
     - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1096819983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4816050060183594585, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
 --- !u!4 &5354900301881055130 stripped
 Transform:
@@ -503,9 +499,15 @@ PrefabInstance:
     - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1096819983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2462957314659968425, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4816050060183594585, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b, type: 3}
 --- !u!4 &8229897341028053274 stripped
 Transform:

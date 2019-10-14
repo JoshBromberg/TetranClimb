@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Public Variables
-    public float speed = 10.00f;
+    /*public float speed = 10.00f;
     public float speedBoost;
     public float minX;
     public float maxX;
@@ -25,22 +25,27 @@ public class PlayerController : MonoBehaviour
     //public Vector2[] previousPosition = new Vector2[2];
 
     //Private Variables
-    private Rigidbody2D rBody;
     private GameController game;
     private bool missileUpgrade = false, doubleUpgrade = false, laserUpgrade = false;
     private bool firing = false;
     private bool missileFired = false;
     private float x, y;
-
+    */
+    [SerializeField]
+    private float speed = 5;
+    private Rigidbody2D rBody;
+    private bool jump = false;
+    [SerializeField]
+    private GameObject[] feet = new GameObject[2];
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        /*game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         x = transform.position.x;
-        y = transform.position.y;
+        y = transform.position.y;*/
 
         //previousPosition[0] = transform.position;
         //previousPosition[1] = transform.position;
@@ -49,6 +54,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horiz = Input.GetAxis("Horizontal");
+        float vert = jump ? 0 : Input.GetAxis("Jump");
+        if (vert > 0)
+        {
+            jump = true;
+        }
+        //Move Player
+        Vector2 newVelocity = new Vector2(horiz, vert*speed); //Vector 2 holds 2 variables, an X and a Y
+        rBody.velocity = newVelocity * speed; //Move Player
+        if (rBody.velocity.y == 0)
+        {
+            jump = false;
+        }
+        /*
         //FIRE!!!
         if (Input.GetKeyDown(KeyCode.Z) && weaponTimer == 0)
         {
@@ -71,11 +90,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         x = transform.position.x;
-        y = transform.position.y;
+        y = transform.position.y;*/
     }
-
     void FixedUpdate()
     {
+        /*
         //Get Player X and Y
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
@@ -201,9 +220,9 @@ public class PlayerController : MonoBehaviour
                     Destroy(attackSpeedSprites[z]);
                 }
             }
-        }
+        }*/
     }
-    private void upgradeCommands(bool wipe)
+    /*private void upgradeCommands(bool wipe)
     {
         game.SFXPlay(game.upgradeActivate);
         game.resetPanel(game.powerCapsules - 1, wipe);
@@ -290,5 +309,5 @@ public class PlayerController : MonoBehaviour
         attackSpeedTimer = attackSpeedTimerReset;
         upgradeCommands(true);
         game.powerCapsules = 5;
-    }
+    }*/
 }
