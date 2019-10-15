@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2876931098870163011}
   - component: {fileID: 3344458455953125663}
   - component: {fileID: 4162416761419967160}
-  - component: {fileID: 6242265487077245793}
   m_Layer: 0
   m_Name: Fan
   m_TagString: Enemy
@@ -60,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -139,20 +139,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6242265487077245793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5011535583097284174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad574209bb6f47e42b09d4d79df5ff5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: -0.1
-  fanTurned: 0
-  speed: {x: -0.1, y: 0}
-  fanTurnedUp: 0
-  line: 0

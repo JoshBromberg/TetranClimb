@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //NOTE: While moving fast, player will ocasionally fall through platforms
-    
+
     //Public Variables
     /*public float speed = 10.00f;
     public float speedBoost;
@@ -33,8 +33,9 @@ public class PlayerController : MonoBehaviour
     private bool missileFired = false;
     private float x, y;
     */
+    #region Movement Variables
     [SerializeField]
-    private float moveSpeed = 20, jumpSpeed = 800, maxSpeed = 15;
+    private float moveSpeed = 20, jumpSpeed = 800, maxSpeed = 15, moveSpeedIncrement = 5;
     private float moveSpeedBase;
     private Rigidbody2D rBody;
     [SerializeField]
@@ -43,12 +44,27 @@ public class PlayerController : MonoBehaviour
     private GameObject[] feet = new GameObject[2];
     [SerializeField]
     private Transform[] groundCheck = new Transform[2];
+    #endregion
+    #region Attack Variables
+    private int attackCooldown = 0, attackCooldownReset = 10, missileCooldown = 0, missileCooldownReset = 25, laserCooldown = 0, laserCooldownReset = 25, laserDamage = 2, laserDamageMax = 5;
+    [SerializeField]
+    private GameObject attackObj, missileObj, laserObj;
+    private bool missile = false, laser = false;
+    private Transform attackSpawn, missileSpawn, laserSpawn, body;
+    #endregion
+    #region Player Stat Variables
+    private int health = 100;
+    private int maximumHealth = 100;
+    private int powerCapsules = 0;
+    private bool[] canUpgrade = new bool[3];
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
         moveSpeedBase = moveSpeed;
+        health = maximumHealth;
         /*game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         x = transform.position.x;
@@ -89,6 +105,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        #region Move Player
         foreach (Transform t in groundCheck)
         {
             if (Physics2D.Linecast(transform.position, t.position, 1 << LayerMask.NameToLayer("Foreground")))
@@ -109,6 +126,78 @@ public class PlayerController : MonoBehaviour
         {
             rBody.velocity = rBody.velocity.normalized*maxSpeed;
         }
+        #endregion
+        #region Attack
+        if (Input.GetAxis("Fire1") > 0)
+        {
+            if (attackCooldown == 0)
+            {
+                Instantiate(attackObj, attackSpawn.position, body.rotation);
+                attackCooldown = attackCooldownReset;
+            }
+            if (missile && missileCooldown == 0)
+            {
+                Instantiate(missileObj, missileSpawn.position, body.rotation);
+                missileCooldown = missileCooldownReset;
+            }
+            if (laser && laserCooldown == 0)
+            {
+                Instantiate(laserObj, laserSpawn.position, body.rotation);
+                laserCooldown = laserCooldownReset;
+            }
+        }
+        #endregion
+        #region Power Capsules
+        if (Input.GetAxis("Fire2") > 0 && powerCapsules > 0)
+        {
+            if (powerCapsules == 1 && canUpgrade[0])
+            {
+                moveSpeed += moveSpeedIncrement;
+                canUpgrade[0] = moveSpeed >= 2.5f * moveSpeedBase;
+                powerCapsules = 0;
+            }
+            else if (powerCapsules == 2 && canUpgrade[1])
+            {
+                if (missile)
+                {
+                    missileCooldownReset -= 5;
+                    canUpgrade[1] = missileCooldownReset == attackCooldownReset;
+                }
+                else
+                {
+                    missile = true;
+                }
+                powerCapsules = 0;
+            }
+            else if (powerCapsules == 3 && canUpgrade[2])
+            {
+                if (laser)
+                {
+                    ++laserDamage;
+                    canUpgrade[2] = laserDamage == laserDamageMax;
+                }
+                else
+                {
+                    laser = true;
+                }
+                powerCapsules = 0;
+            }
+        }
+        #endregion
+        #region Cooldowns
+        if (attackCooldown > 0)
+        {
+            --attackCooldown;
+        }
+        if (missileCooldown > 0)
+        {
+            --missileCooldown;
+        }
+        if (laserCooldown > 0)
+        {
+            --laserCooldown;
+        }
+        #endregion
         /*
         //Get Player X and Y
         float horiz = Input.GetAxis("Horizontal");
