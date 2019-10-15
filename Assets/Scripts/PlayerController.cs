@@ -50,7 +50,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject attackObj, missileObj, laserObj;
     private bool missile = false, laser = false;
+    [SerializeField]
     private Transform attackSpawn, missileSpawn, laserSpawn, body;
+    #region Propeties
+    public int LaserDamage { get { return laserDamage; } }
+    #endregion
     #endregion
     #region Player Stat Variables
     private int health = 100;

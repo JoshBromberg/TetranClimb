@@ -61,6 +61,36 @@ Transform:
   m_Father: {fileID: 3452949327249237758}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1626862601332862029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444926871181681523}
+  m_Layer: 0
+  m_Name: LaserSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &444926871181681523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626862601332862029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.45, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3452949327249237758}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3096546606650158757
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +125,9 @@ Transform:
   - {fileID: 2169749579104319890}
   - {fileID: 7621088289669218736}
   - {fileID: 1669813202209938580}
+  - {fileID: 4086750023686789970}
+  - {fileID: 5484619973179128537}
+  - {fileID: 444926871181681523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,6 +183,7 @@ MonoBehaviour:
   moveSpeed: 20
   jumpSpeed: 800
   maxSpeed: 15
+  moveSpeedIncrement: 5
   grounded: 0
   feet:
   - {fileID: 7458121050931098163}
@@ -157,6 +191,16 @@ MonoBehaviour:
   groundCheck:
   - {fileID: 2169749579104319890}
   - {fileID: 1669813202209938580}
+  attackObj: {fileID: 6942912123473670134, guid: 7423369c2e0b2284395b7b7d5e8b1ec8,
+    type: 3}
+  missileObj: {fileID: 4175832226289118519, guid: 20161396e5f343a4e8b327ac3c5ceab7,
+    type: 3}
+  laserObj: {fileID: 7567986076649154910, guid: 856f3ee66e61a0c468262d439b46ef34,
+    type: 3}
+  attackSpawn: {fileID: 5484619973179128537}
+  missileSpawn: {fileID: 4086750023686789970}
+  laserSpawn: {fileID: 444926871181681523}
+  body: {fileID: 8253994315303242745}
 --- !u!1 &4321735754586026126
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +328,7 @@ GameObject:
   - component: {fileID: 5079433004586957738}
   m_Layer: 0
   m_Name: Cannon
-  m_TagString: Untagged
+  m_TagString: Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +384,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1523623219
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6287787046888575383, guid: 8eea644f659b67a45b76afa8e5117c84,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,6 +509,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7737219829459600692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5484619973179128537}
+  m_Layer: 0
+  m_Name: AttackSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5484619973179128537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7737219829459600692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.55, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3452949327249237758}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8001602848139652255
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +569,36 @@ Transform:
   - {fileID: 4800696447668209145}
   m_Father: {fileID: 8253994315303242745}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8516950608054856829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4086750023686789970}
+  m_Layer: 0
+  m_Name: MissileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4086750023686789970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516950608054856829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3452949327249237758}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1051392052744494213
 PrefabInstance:
@@ -565,15 +669,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da42b488b5eda742bf7d1f660bcd246, type: 3}
---- !u!4 &2261675706097024751 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1293761875624469098, guid: 9da42b488b5eda742bf7d1f660bcd246,
-    type: 3}
-  m_PrefabInstance: {fileID: 1051392052744494213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4214516568042309925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3813339410412869024, guid: 9da42b488b5eda742bf7d1f660bcd246,
+    type: 3}
+  m_PrefabInstance: {fileID: 1051392052744494213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2261675706097024751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1293761875624469098, guid: 9da42b488b5eda742bf7d1f660bcd246,
     type: 3}
   m_PrefabInstance: {fileID: 1051392052744494213}
   m_PrefabAsset: {fileID: 0}
@@ -646,15 +750,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e4ba9a395b9ca48803d896800f19cc, type: 3}
---- !u!4 &4800696447668209145 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 576879544996080195, guid: 45e4ba9a395b9ca48803d896800f19cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 5376738407278997434}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7458121050931098163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3251197113627581833, guid: 45e4ba9a395b9ca48803d896800f19cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5376738407278997434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4800696447668209145 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 576879544996080195, guid: 45e4ba9a395b9ca48803d896800f19cc,
     type: 3}
   m_PrefabInstance: {fileID: 5376738407278997434}
   m_PrefabAsset: {fileID: 0}
