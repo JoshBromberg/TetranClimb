@@ -12,13 +12,11 @@ public class WeaponController : MonoBehaviour
     protected int damage;
     private float distanceTravelled = 0;
     private float maxDistance = 5.1f;
-    private Vector2 baseMove = new Vector2(-1, 0);
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-        //speed = GameObject.FindGameObjectWithTag("Body").GetComponent<BodyController>().Reverse ? -speed : speed;
     }
 
     // Update is called once per frame
