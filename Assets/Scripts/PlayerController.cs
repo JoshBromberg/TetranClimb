@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rBody;
     [SerializeField]
     private Transform[] legJoints = new Transform[2], kneeJoints = new Transform[2], ankleJoints = new Transform[2];
+    [SerializeField]
     private bool grounded = false;
     private bool moveFirstLeg = true;
     private bool forwardStep = true;
@@ -76,30 +77,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        /*
-        //FIRE!!!
-        if (Input.GetKeyDown(KeyCode.Z) && weaponTimer == 0)
-        {
-            firing = true;
-            fireWeapon();
-            //transform.position is the same as "where am I?"
-        }
-        else if (Input.GetKeyUp(KeyCode.Z))
-        {
-            firing = false;
-        }
-        //counter += Time.deltaTime; (Time.deltaTime is the time between now and last update)
-
-        //Move Options
-        if (transform.position.x != x || transform.position.y != y)
-        {
-            for (int z = 0; z < optionsActive; ++z)
-            {
-                options[z].GetComponent<OptionController>().moveOption(transform.position);
-            }
-        }
-        x = transform.position.x;
-        y = transform.position.y;*/
     }
     void FixedUpdate()
     {
@@ -109,22 +86,23 @@ public class PlayerController : MonoBehaviour
             if (Physics2D.Linecast(transform.position, t.position, 1 << LayerMask.NameToLayer("Foreground")))
             {
                 grounded = true;
+                
                 #region Reset Animation
                 moveFirstLeg = true;
                 forwardStep = true;
+                //Proper Rotation for facing Left
                 legJoints[0].rotation = Quaternion.identity;
                 legJoints[1].rotation = Quaternion.identity;
                 legJoints[1].Rotate(0, 0, -45);
-                legJoints[1].position -= new Vector3(0.15f, 0);
                 kneeJoints[0].rotation = Quaternion.identity;
                 kneeJoints[0].Rotate(0, 0, -45);
                 kneeJoints[1].rotation = Quaternion.identity;
-                kneeJoints[0].Rotate(0, 0, 45);
                 ankleJoints[0].rotation = Quaternion.identity;
+                ankleJoints[0].Rotate(0, 0, -45);
                 ankleJoints[1].rotation = Quaternion.identity;
                 ankleJoints[1].Rotate(0, 0, -45);
-                #endregion
-                break;
+                #endregion 
+            break;
             }
         }
         moveSpeed = grounded ? moveSpeedBase : moveSpeedBase/2.5f;
@@ -140,10 +118,6 @@ public class PlayerController : MonoBehaviour
             for (int i = 0; i<legJoints.Length; ++i)
             {
                 legJoints[i].rotation = Quaternion.identity;
-                if (i == 1)
-                {
-                    legJoints[i].position += new Vector3(0.15f, 0);
-                }
                 kneeJoints[i].rotation = Quaternion.identity;
                 kneeJoints[i].Rotate(0, 0, -45);
                 ankleJoints[i].rotation = Quaternion.identity;
@@ -155,10 +129,10 @@ public class PlayerController : MonoBehaviour
             rBody.velocity = rBody.velocity.normalized*maxSpeed;
         }
         #region Animate Legs
-        if (horiz > 0 && grounded)
+        if (horiz != 0 && grounded && grounded == false)
         {
             int i = moveFirstLeg ? 0 : 1;
-            float speed = -moveSpeed / 10;
+            float speed = -moveSpeed / 5;
             switch (forwardStep)
             {
                 case true:
@@ -166,7 +140,7 @@ public class PlayerController : MonoBehaviour
                     ankleJoints[i].Rotate(0, 0, -speed);
                     legJoints[1 - i].Rotate(0, 0, -speed / 2);
                     kneeJoints[1 - i].Rotate(0, 0, speed);
-                    animationCounter += speed;
+                    animationCounter += -speed;
                     if (animationCounter >= legMaxRotation)
                     {
                         forwardStep = false;
@@ -175,7 +149,9 @@ public class PlayerController : MonoBehaviour
                 case false:
                     kneeJoints[i].Rotate(0, 0, -speed * 2);
                     ankleJoints[i].Rotate(0, 0, speed);
-                    animationCounter += speed;
+                    legJoints[1 - i].Rotate(0, 0, -speed / 2);
+                    kneeJoints[1 - i].Rotate(0, 0, speed);
+                    animationCounter += -speed;
                     if (animationCounter >= legMaxRotation)
                     {
                         forwardStep = true;
