@@ -87,8 +87,8 @@ public class PlayerController : MonoBehaviour
             {
                 grounded = true;
                 #region Reset Animation
-                moveFirstLeg = true;
-                forwardStep = true;
+                //moveFirstLeg = true;
+                //forwardStep = true;
                 //SetDefaultRotation();
                 //Proper Rotation for facing Left
 
@@ -114,8 +114,7 @@ public class PlayerController : MonoBehaviour
             rBody.velocity = rBody.velocity.normalized*maxSpeed;
         }
         #region Animate Legs
-        //Currently Commented out
-        if (horiz != 0 && grounded && grounded == false)
+        if (horiz != 0 && grounded)
         {
             int i = moveFirstLeg ? 0 : 1;
             float speed = -moveSpeed / 5;
@@ -124,26 +123,30 @@ public class PlayerController : MonoBehaviour
                 case true:
                     legJoints[i].Rotate(0, 0, speed);
                     ankleJoints[i].Rotate(0, 0, -speed);
-                    legJoints[1 - i].Rotate(0, 0, -speed / 2);
-                    kneeJoints[1 - i].Rotate(0, 0, speed);
+                    MoveLegBackwards(1 - i, speed);
                     animationCounter += -speed;
                     if (animationCounter >= legMaxRotation)
                     {
                         forwardStep = false;
+                        animationCounter = 0;
                     }
                     break;
                 case false:
                     kneeJoints[i].Rotate(0, 0, -speed * 2);
-                    ankleJoints[i].Rotate(0, 0, speed);
-                    legJoints[1 - i].Rotate(0, 0, -speed / 2);
-                    kneeJoints[1 - i].Rotate(0, 0, speed);
+                    ankleJoints[i].Rotate(0, 0, speed * 2);
+                    MoveLegBackwards(1 - i, speed);
                     animationCounter += -speed;
                     if (animationCounter >= legMaxRotation)
                     {
                         forwardStep = true;
+                        animationCounter = 0;
                         moveFirstLeg = moveFirstLeg ? false : true;
                     }
                     break;
+                    //Total Change
+                    //Leg: speed
+                    //Knee: -speed*2
+                    //Ankle: speed
             }
         }
         #endregion
@@ -359,6 +362,12 @@ public class PlayerController : MonoBehaviour
         ankleJoints[0].Rotate(0, 0, -45);
         ankleJoints[1].rotation = Quaternion.identity;
         ankleJoints[1].Rotate(0, 0, -45);
+    }
+    private void MoveLegBackwards (int i, float speed)
+    {
+        legJoints[i].Rotate(0, 0, -speed / 2);
+        kneeJoints[i].Rotate(0, 0, speed);
+        ankleJoints[i].Rotate(0, 0, -speed / 2);
     }
     /*private void upgradeCommands(bool wipe)
     {
