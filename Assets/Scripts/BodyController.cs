@@ -14,7 +14,7 @@ public class BodyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -49,7 +49,9 @@ public class BodyController : MonoBehaviour
             reverse = false;
         }
         #endregion
-        //Use Pythagorem Theorm to find the distance... but I need the angle...
-
+    }
+    public void ResetAngle()
+    {
+        previousAngle = 0;
     }
 }

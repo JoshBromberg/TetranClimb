@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
             #region Reset Animation
             moveFirstLeg = true;
             forwardStep = true;
-            //SetDefaultRotation();
+            SetDefaultRotation();
             #endregion
         }
         if (grounded == false && rBody.velocity.magnitude > maxSpeed)
@@ -352,16 +352,21 @@ public class PlayerController : MonoBehaviour
     }
     private void SetDefaultRotation()
     {
+        body.rotation = Quaternion.identity;
+        body.GetComponent<BodyController>().ResetAngle();
         legJoints[0].rotation = Quaternion.identity;
+        //legJoints[0].Rotate(0, 0, -body.rotation.z);
         legJoints[1].rotation = Quaternion.identity;
-        legJoints[1].Rotate(0, 0, -45);
+        //legJoints[1].Rotate(0, 0, -body.rotation.z);
         kneeJoints[0].rotation = Quaternion.identity;
         kneeJoints[0].Rotate(0, 0, -45);
         kneeJoints[1].rotation = Quaternion.identity;
+        kneeJoints[1].Rotate(0, 0, -45);
         ankleJoints[0].rotation = Quaternion.identity;
         ankleJoints[0].Rotate(0, 0, -45);
         ankleJoints[1].rotation = Quaternion.identity;
         ankleJoints[1].Rotate(0, 0, -45);
+        //Body and both LegJoints start with a rotation of Quaternion.identity
     }
     private void MoveLegBackwards (int i, float speed)
     {
