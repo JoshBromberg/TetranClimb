@@ -17,6 +17,7 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
+        speed = GameObject.FindGameObjectWithTag("Body").GetComponent<BodyController>().Reverse ? -speed : speed;
     }
 
     // Update is called once per frame

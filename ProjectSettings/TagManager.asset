@@ -8,6 +8,7 @@ TagManager:
   - Capsule
   - Cannon
   - Weapon
+  - Body
   layers:
   - Default
   - TransparentFX
