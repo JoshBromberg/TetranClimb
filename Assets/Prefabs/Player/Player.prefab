@@ -101,7 +101,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3452949327249237758}
   - component: {fileID: 1407083208391369325}
-  - component: {fileID: 3758386955844340728}
   - component: {fileID: 8975434966692008979}
   m_Layer: 0
   m_Name: Player
@@ -148,22 +147,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &3758386955844340728
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3096546606650158757}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.03119599, y: 0.031151593}
-  m_Size: {x: 1.00761, y: 0.43078238}
-  m_Direction: 1
 --- !u!114 &8975434966692008979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +339,7 @@ GameObject:
   - component: {fileID: 8253994315303242745}
   - component: {fileID: 3069561324595884017}
   - component: {fileID: 8397236111174806423}
+  - component: {fileID: 4312436955869547343}
   m_Layer: 0
   m_Name: Body
   m_TagString: Body
@@ -448,6 +432,22 @@ MonoBehaviour:
   legs:
   - {fileID: 4702438987486721775}
   - {fileID: 4735394830339520213}
+--- !u!70 &4312436955869547343
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331106676888804380}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03119599, y: 0.031151593}
+  m_Size: {x: 1.00761, y: 0.43078238}
+  m_Direction: 1
 --- !u!1 &7737219829459600692
 GameObject:
   m_ObjectHideFlags: 0

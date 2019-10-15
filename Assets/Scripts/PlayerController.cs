@@ -86,21 +86,12 @@ public class PlayerController : MonoBehaviour
             if (Physics2D.Linecast(transform.position, t.position, 1 << LayerMask.NameToLayer("Foreground")))
             {
                 grounded = true;
-                
                 #region Reset Animation
                 moveFirstLeg = true;
                 forwardStep = true;
+                //SetDefaultRotation();
                 //Proper Rotation for facing Left
-                legJoints[0].rotation = Quaternion.identity;
-                legJoints[1].rotation = Quaternion.identity;
-                legJoints[1].Rotate(0, 0, -45);
-                kneeJoints[0].rotation = Quaternion.identity;
-                kneeJoints[0].Rotate(0, 0, -45);
-                kneeJoints[1].rotation = Quaternion.identity;
-                ankleJoints[0].rotation = Quaternion.identity;
-                ankleJoints[0].Rotate(0, 0, -45);
-                ankleJoints[1].rotation = Quaternion.identity;
-                ankleJoints[1].Rotate(0, 0, -45);
+
                 #endregion 
             break;
             }
@@ -115,13 +106,7 @@ public class PlayerController : MonoBehaviour
             #region Reset Animation
             moveFirstLeg = true;
             forwardStep = true;
-            for (int i = 0; i<legJoints.Length; ++i)
-            {
-                legJoints[i].rotation = Quaternion.identity;
-                kneeJoints[i].rotation = Quaternion.identity;
-                kneeJoints[i].Rotate(0, 0, -45);
-                ankleJoints[i].rotation = Quaternion.identity;
-            }
+            //SetDefaultRotation();
             #endregion
         }
         if (grounded == false && rBody.velocity.magnitude > maxSpeed)
@@ -129,6 +114,7 @@ public class PlayerController : MonoBehaviour
             rBody.velocity = rBody.velocity.normalized*maxSpeed;
         }
         #region Animate Legs
+        //Currently Commented out
         if (horiz != 0 && grounded && grounded == false)
         {
             int i = moveFirstLeg ? 0 : 1;
@@ -360,6 +346,19 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }*/
+    }
+    private void SetDefaultRotation()
+    {
+        legJoints[0].rotation = Quaternion.identity;
+        legJoints[1].rotation = Quaternion.identity;
+        legJoints[1].Rotate(0, 0, -45);
+        kneeJoints[0].rotation = Quaternion.identity;
+        kneeJoints[0].Rotate(0, 0, -45);
+        kneeJoints[1].rotation = Quaternion.identity;
+        ankleJoints[0].rotation = Quaternion.identity;
+        ankleJoints[0].Rotate(0, 0, -45);
+        ankleJoints[1].rotation = Quaternion.identity;
+        ankleJoints[1].Rotate(0, 0, -45);
     }
     /*private void upgradeCommands(bool wipe)
     {
