@@ -10,6 +10,8 @@ public class WeaponController : MonoBehaviour
     private float speed = 0.1f;
     protected Rigidbody2D rBody;
     protected int damage;
+    private float distanceTravelled = 0;
+    private float maxDistance = 5.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,11 @@ public class WeaponController : MonoBehaviour
     void Update()
     {
         rBody.position += Vector2.left * speed;
+        distanceTravelled += speed;
+        if (distanceTravelled >= maxDistance)
+        {
+            rBody.position += Vector2.down * speed;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - Capsule
+  - Cannon
+  - Weapon
   layers:
   - Default
   - TransparentFX
