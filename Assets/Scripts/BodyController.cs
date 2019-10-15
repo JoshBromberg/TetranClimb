@@ -28,7 +28,7 @@ public class BodyController : MonoBehaviour
                 -1 * Mathf.Rad2Deg * Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x)
                 :
                 -1 * Mathf.Rad2Deg * Mathf.Atan2(mouse.x - transform.position.x, mouse.y - transform.position.y) - 90;
-            if (currentAngle <= 22.5)
+            if (currentAngle <= 22.5 && currentAngle >=-202.5)
             {
                 transform.Rotate(0, 0, currentAngle - previousAngle);
                 legs[0].Rotate(0, 0, -1 * (currentAngle - previousAngle));
