@@ -51,5 +51,13 @@ public abstract class EnemyController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Damage(i);
             Destroy(gameObject);
         }
+        else if (t == "Rock" && name.Contains("Fire"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        OnTriggerEnter2D(collision.collider);
     }
 }

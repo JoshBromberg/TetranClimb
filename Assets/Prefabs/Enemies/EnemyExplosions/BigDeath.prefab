@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6474367009356091495}
   - component: {fileID: 5248359173593618531}
   - component: {fileID: 1651378546672858139}
-  - component: {fileID: 8419305920473554820}
+  - component: {fileID: 46890391050485615}
   m_Layer: 0
   m_Name: BigDeath
   m_TagString: Untagged
@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -100,7 +101,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8419305920473554820
+--- !u!114 &46890391050485615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9221042993034569893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfe24bc6f659e8b439d1a09e3f4d193d, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b80a8c61c0da94abb58362db5775b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionTimer: 25
-  sound: 
-  mechanical: {fileID: 0}
-  big: {fileID: 8300000, guid: 45e7455aed24c864597af205eb34acb2, type: 3}
-  bigCore: {fileID: 0}
-  volcano: {fileID: 0}
-  normal: {fileID: 0}
+  time: 0.25

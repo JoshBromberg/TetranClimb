@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GarrunController : EnemyController
 {
-    private Vector2 aggroRange = new Vector2(7.5f, 1);
+    private Vector2 aggroRange = new Vector2(7.5f, 1.25f);
     private float margainOfError = 0.15f;
     private Transform player;
     private bool reverse;

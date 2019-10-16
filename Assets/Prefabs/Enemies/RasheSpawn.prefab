@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 774490149865350780}
   - component: {fileID: 6683026317353151082}
-  - component: {fileID: 8979592138548355390}
-  - component: {fileID: 5471039251092265670}
   - component: {fileID: 6223905387967253946}
   - component: {fileID: 1221356940929166650}
+  - component: {fileID: 1217410670201284505}
   m_Layer: 0
   m_Name: RasheSpawn
   m_TagString: Enemy
@@ -60,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -69,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1146174827
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300270, guid: aa2e77c65c5eea942a1062618c7e0623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,41 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8979592138548355390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103830791853713269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379d5431ff4004442a19f319a32c3151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rashe: {fileID: 2467467978011711081, guid: f6b9d271b8c7a7d4fbc9856840082498, type: 3}
-  health: 5
-  damaged: {fileID: 21300272, guid: aa2e77c65c5eea942a1062618c7e0623, type: 3}
---- !u!114 &5471039251092265670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103830791853713269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad574209bb6f47e42b09d4d79df5ff5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: -0.05
-  fanTurned: 0
-  speed: {x: -0.05, y: 0}
-  fanTurnedUp: 0
-  line: 0
-  rugurrTimer: 0
-  jump: 0
-  totalJumps: 0
 --- !u!50 &6223905387967253946
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +130,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.27}
   m_EdgeRadius: 0
+--- !u!114 &1217410670201284505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103830791853713269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f28fa8bd04aadc4281d2a480567678a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  health: 10
+  damage: 10
+  score: 80
+  deathAnimation: {fileID: 9221042993034569893, guid: 487b4bff0077bf74da6bae258b082bb0,
+    type: 3}
+  rashe: {fileID: 2467467978011711081, guid: f6b9d271b8c7a7d4fbc9856840082498, type: 3}

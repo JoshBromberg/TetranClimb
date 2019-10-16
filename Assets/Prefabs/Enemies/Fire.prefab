@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3761035489209352300}
   - component: {fileID: 3342041647591292454}
   - component: {fileID: 6213126291940309690}
-  - component: {fileID: 6090601778212197445}
-  - component: {fileID: 3962265238016683396}
-  - component: {fileID: 3491732875875306651}
+  - component: {fileID: 2283580060321007650}
+  - component: {fileID: 6486452692206478826}
+  - component: {fileID: 2356974459265123673}
   m_Layer: 0
-  m_Name: StraightFire
+  m_Name: Fire
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -102,27 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6090601778212197445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6374548167159973348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad574209bb6f47e42b09d4d79df5ff5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: 0.05
-  fanTurned: 0
-  speed: {x: 0, y: 0.05}
-  fanTurnedUp: 0
-  line: 0
-  rugurrTimer: 0
-  jump: 0
-  totalJumps: 0
---- !u!50 &3962265238016683396
+--- !u!50 &2283580060321007650
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -143,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &3491732875875306651
+--- !u!58 &6486452692206478826
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,3 +140,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.03
+--- !u!114 &2356974459265123673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374548167159973348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f735085cb116ae9488c162b2f84e1c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  health: 100
+  damage: 3
+  score: 0
+  deathAnimation: {fileID: 6727896920855928702, guid: 8ee2ea47a20387545b15d93e38318252,
+    type: 3}

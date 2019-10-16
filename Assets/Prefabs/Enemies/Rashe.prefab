@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 2467467978011711086}
   - component: {fileID: 8779086732500242247}
   - component: {fileID: 3028256100175411138}
-  - component: {fileID: 2440159383145865212}
-  - component: {fileID: 5200094735933719242}
+  - component: {fileID: 6867482521807639619}
   m_Layer: 0
   m_Name: Rashe
   m_TagString: Enemy
@@ -61,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.01}
@@ -150,7 +150,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &2440159383145865212
+--- !u!114 &6867482521807639619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,30 +159,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2467467978011711081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad574209bb6f47e42b09d4d79df5ff5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2161941b7a5ec654f911c5d2cba1bd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.1
-  fanTurned: 0
-  speed: {x: 0, y: 0}
-  fanTurnedUp: 0
-  line: 0
-  rugurrTimer: 0
-  jump: 0
-  totalJumps: 0
---- !u!114 &5200094735933719242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467467978011711081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7c0b89fcd3c3a489ee71c04ce3d9f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  straightFire: {fileID: 6374548167159973348, guid: c27403edb6f834f408b7ab3f1275e10f,
+  speed: 0.08
+  health: 3
+  damage: 0
+  score: 20
+  deathAnimation: {fileID: 6727896920855928702, guid: 8ee2ea47a20387545b15d93e38318252,
     type: 3}
-  diagonalFire: {fileID: 0}
-  fired: 0
+  missile: {fileID: 6374548167159973348, guid: e98d0263d4f30c24b941bcbe747ddc17, type: 3}
