@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private int score;
+    private int[] fansActive = { 4, 4, 4, 4 };
+    [SerializeField]
+    private GameObject powerCapsule;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +27,15 @@ public class GameController : MonoBehaviour
     {
         score += i;
         Instantiate(g, t.position, t.rotation);
+        if (g.name.Contains("Fan"))
+        {
+            int fanArray = t.position.y > transform.position.y ? 0 : 2;
+            fanArray = t.position.x > transform.position.x ? fanArray : fanArray + 1;
+            --fansActive[fanArray];
+            if (fansActive[fanArray] == 0)
+            {
+                Instantiate(powerCapsule, t.position, t.rotation);
+            }
+        }
     }
 }

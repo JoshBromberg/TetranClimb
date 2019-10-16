@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3583889658889064405}
   - component: {fileID: 3583889658889064404}
   - component: {fileID: 3583889658889064407}
-  - component: {fileID: 379657636055723750}
   - component: {fileID: 7367055024271951387}
+  - component: {fileID: 5559264363955490570}
   m_Layer: 0
   m_Name: PowerCapsule
   m_TagString: Capsule
@@ -102,27 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &379657636055723750
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3583889658889064406}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &7367055024271951387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +128,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &5559264363955490570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583889658889064406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528d1b89b04b0f74abc0d1c9d4a29326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

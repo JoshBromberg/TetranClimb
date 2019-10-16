@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private int health = 100;
     private int maximumHealth = 100;
     private int powerCapsules = 0;
-    private bool[] canUpgrade = new bool[3];
+    private bool[] canUpgrade = { true, true, true };
     #endregion
 
     void Start()
@@ -218,5 +218,9 @@ public class PlayerController : MonoBehaviour
         {
             //TODO: Death commands, likely a dramatic explosion then a death splashscreen
         }
+    }
+    public void AddPowerCapsule()
+    {
+        ++powerCapsules;
     }
 }
