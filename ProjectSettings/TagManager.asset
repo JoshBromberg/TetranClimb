@@ -9,6 +9,7 @@ TagManager:
   - Cannon
   - Weapon
   - Body
+  - Boundry
   layers:
   - Default
   - TransparentFX

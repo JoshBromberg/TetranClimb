@@ -190,8 +190,9 @@ public class PlayerController : MonoBehaviour
     }
     private void SetDefaultRotation()
     {
+        BodyController b = body.GetComponent<BodyController>();
         body.rotation = Quaternion.identity;
-        body.GetComponent<BodyController>().ResetAngle();
+        b.ResetAngle();
         legJoints[0].rotation = Quaternion.identity;
         legJoints[1].rotation = Quaternion.identity;
         kneeJoints[0].rotation = Quaternion.identity;
@@ -202,6 +203,7 @@ public class PlayerController : MonoBehaviour
         ankleJoints[0].Rotate(0, 0, -45);
         ankleJoints[1].rotation = Quaternion.identity;
         ankleJoints[1].Rotate(0, 0, -45);
+        b.SetDirectionAndRotation();
     }
     private void MoveLegBackwards (int i, float speed)
     {
