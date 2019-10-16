@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private float speed = 0.1f;
     protected Rigidbody2D rBody;
+    [SerializeField]
     protected int damage;
     private float distanceTravelled = 0;
     private float maxDistance = 5.1f;
@@ -26,7 +27,7 @@ public class WeaponController : MonoBehaviour
         distanceTravelled += speed;
         if (distanceTravelled >= maxDistance)
         {
-            rBody.position -= new Vector2(0, transform.up.y) * speed;
+            rBody.position -= new Vector2(0, 2) * speed;
         }
     }
 

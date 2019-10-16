@@ -211,4 +211,12 @@ public class PlayerController : MonoBehaviour
         kneeJoints[i].Rotate(0, 0, speed);
         ankleJoints[i].Rotate(0, 0, -speed / 2);
     }
+    public void Damage (int i)
+    {
+        health -= i;
+        if (health <= 0)
+        {
+            //TODO: Death commands, likely a dramatic explosion then a death splashscreen
+        }
+    }
 }

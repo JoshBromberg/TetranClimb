@@ -135,3 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyOnHit: 0
   speed: 0.1
+  damage: 2
