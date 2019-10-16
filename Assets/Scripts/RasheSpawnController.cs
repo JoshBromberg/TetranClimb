@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RasheSpawnController : EnemyController
 {
-    private Vector2 aggroRange = new Vector2(7.5f, 1);
+    private Vector2 aggroRange = new Vector2(7.5f, 0.5f);
     private Transform player;
     private int spawnTimer = 0, spawnTimerReset = 10, spawnLimit = 8;
     private SpriteRenderer sr;
