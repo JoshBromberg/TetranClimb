@@ -15,18 +15,16 @@ public class MissileController : EnemyController
         {
             case true:
                 xSpeed = speed;
-                ySpeed = xDif / speed * yDif;
+                ySpeed = xDif / yDif * speed;
                 break;
             case false:
                 ySpeed = speed;
-                xSpeed = yDif / speed * xDif;
+                xSpeed = yDif / xDif * speed;
                 break;
         }
         xSpeed = transform.position.x > t.x ? -xSpeed : xSpeed;
         ySpeed = transform.position.y > t.y ? -ySpeed : ySpeed;
         moving = true;
-        Debug.Log(xSpeed);
-        Debug.Log(ySpeed);
     }
 
     // Update is called once per frame
