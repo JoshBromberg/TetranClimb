@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6727896920855928701}
   - component: {fileID: 6727896920855928700}
   - component: {fileID: 6727896920855928703}
-  - component: {fileID: 291807726809024134}
+  - component: {fileID: 3723185194780043725}
   m_Layer: 0
   m_Name: EnemyDeath
   m_TagString: Untagged
@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -100,7 +101,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &291807726809024134
+--- !u!114 &3723185194780043725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6727896920855928702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfe24bc6f659e8b439d1a09e3f4d193d, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b80a8c61c0da94abb58362db5775b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionTimer: 10
-  sound: 
-  mechanical: {fileID: 8300000, guid: 16e13b0b3c850f94dbbd6dd8e7456c23, type: 3}
-  big: {fileID: 0}
-  bigCore: {fileID: 0}
-  volcano: {fileID: 8300000, guid: 93a27cfa008e96a4999cf9166e04011a, type: 3}
-  normal: {fileID: 8300000, guid: c5bdce57edbe7a943be193a817d3fb04, type: 3}
+  time: 0.25

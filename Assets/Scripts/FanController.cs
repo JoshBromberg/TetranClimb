@@ -11,6 +11,7 @@ public class FanController : EnemyController
     {
         moving = true;
     }
+    protected override void SpecificUpdate() { }
     protected override void Move()
     {
         rBody.position += new Vector2(speed * direction, 0);

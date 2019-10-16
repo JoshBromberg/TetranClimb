@@ -22,8 +22,9 @@ public class BoundryController : MonoBehaviour
         if (t == "Foot" || t == "Cannon" || t == "Player" || t == "Body")
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(0, 0.5f);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         }
-        else
+        else if (tag == "Enemy" || tag == "Weapon")
         {
             Destroy(collider.gameObject);
         }

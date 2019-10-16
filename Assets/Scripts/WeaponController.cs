@@ -27,7 +27,8 @@ public class WeaponController : MonoBehaviour
         distanceTravelled += speed;
         if (distanceTravelled >= maxDistance)
         {
-            rBody.position -= new Vector2(0, 2) * speed;
+            Destroy(gameObject);
+            //rBody.position -= new Vector2(0, 2) * speed;
         }
     }
 

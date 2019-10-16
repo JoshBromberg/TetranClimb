@@ -29,8 +29,9 @@ public abstract class EnemyController : MonoBehaviour
         {
             Move();
         }
+        SpecificUpdate();
     }
-
+    protected abstract void SpecificUpdate();
     public void Damage (int i)
     {
         health -= i;
