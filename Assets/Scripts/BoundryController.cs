@@ -18,7 +18,8 @@ public class BoundryController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Foot" || collider.gameObject.tag == "Cannon")
+        string t = collider.gameObject.tag;
+        if (t == "Foot" || t == "Cannon" || t == "Player" || t == "Body")
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(0, 0.5f);
         }
@@ -26,5 +27,10 @@ public class BoundryController : MonoBehaviour
         {
             Destroy(collider.gameObject);
         }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        OnTriggerExit2D(collision.collider);
     }
 }
