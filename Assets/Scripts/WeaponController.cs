@@ -30,21 +30,18 @@ public class WeaponController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.tag == "Cannon")
+        string s = col.gameObject.tag;
+        if (s == "Enemy")
         {
-            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
-        }
-        else if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<EnemyController>().Damage(damage);
+            col.gameObject.GetComponent<EnemyController>().Damage(damage);
             if (destroyOnHit)
             {
                 Destroy(gameObject);
             }
         }
-        else
+        else if (s == "Rock" || s == "Boundry")
         {
             Destroy(gameObject);
         }
