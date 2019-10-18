@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoundryController : MonoBehaviour
 {
+    public Vector2 playerSpawn = new Vector2(0, 0.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,10 @@ public class BoundryController : MonoBehaviour
         string t = collider.gameObject.tag;
         if (t == "Foot" || t == "Cannon" || t == "Player" || t == "Body")
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(0, 0.5f);
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         }
-        else if (tag == "Enemy" || tag == "Weapon")
+        else if (tag == "Enemy" || tag == "Weapon" || tag == "Rock")
         {
             Destroy(collider.gameObject);
         }

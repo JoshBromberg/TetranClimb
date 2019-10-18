@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5467356278280942800
+--- !u!1 &7029539395460758201
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6939826553497741334}
-  - component: {fileID: 129990435660606614}
-  - component: {fileID: 2552892794594832059}
+  - component: {fileID: 6890118520113072572}
+  - component: {fileID: 1713105572531968715}
+  - component: {fileID: -7108051027274857498}
   m_Layer: 0
-  m_Name: Boundry
-  m_TagString: Boundry
+  m_Name: BossMode
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6939826553497741334
+--- !u!4 &6890118520113072572
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467356278280942800}
+  m_GameObject: {fileID: 7029539395460758201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &129990435660606614
+--- !u!61 &1713105572531968715
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467356278280942800}
+  m_GameObject: {fileID: 7029539395460758201}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -58,16 +58,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2552892794594832059
+--- !u!114 &-7108051027274857498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467356278280942800}
+  m_GameObject: {fileID: 7029539395460758201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65ae319d9f2a984bbfaeef0e9e1dc95, type: 3}
+  m_Script: {fileID: 11500000, guid: 77ae95e926b17ec4fafd5b50e42436f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawn: {x: 0, y: 0.5}
+  aircraftCarrier: {fileID: 0}
+  poisonOfSnake: {fileID: 0}
+  smallPlatform: {fileID: 0}
+  zub: {fileID: 2533955110845895176, guid: bb22e7b0447601a4994a24f592e8d6cb, type: 3}
+  zubSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -51,7 +51,7 @@ public abstract class EnemyController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Damage(i);
             Destroy(gameObject);
         }
-        else if (t == "Rock" && name.Contains("Fire"))
+        else if (t == "Rock" && (name.Contains("Fire") || name.Contains("Zub")))
         {
             Destroy(gameObject);
         }

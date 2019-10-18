@@ -6,7 +6,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private AudioClip loop;
-    private int loopTimer = 431; //531, 331
     private Transform player;
     private AudioSource s;
     // Start is called before the first frame update

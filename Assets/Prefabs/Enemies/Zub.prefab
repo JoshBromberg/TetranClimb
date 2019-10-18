@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2533955110845895180}
   - component: {fileID: 2533955110845895179}
   - component: {fileID: 2533955110845895178}
-  - component: {fileID: 2533955110845895177}
+  - component: {fileID: 3208829745478736930}
   m_Layer: 0
   m_Name: Zub
   m_TagString: Enemy
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -149,7 +150,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.11}
   m_EdgeRadius: 0
---- !u!114 &2533955110845895177
+--- !u!114 &3208829745478736930
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,9 +159,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2533955110845895176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cdb2a84d2722448b24a084b870be4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f1ca93d7231f4497efb8e72fec488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.075
-  finalForm: {fileID: 21300254, guid: 1f810a8fd859a924781bb155f96f6eb9, type: 3}
-  speed: {x: 0, y: 0}
+  speed: 0.1
+  health: 5
+  damage: 10
+  score: 100
+  deathAnimation: {fileID: 6727896920855928702, guid: 8ee2ea47a20387545b15d93e38318252,
+    type: 3}

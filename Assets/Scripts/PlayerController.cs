@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(attackObj, attackSpawn.position, body.rotation);
                 attackCooldown = attackCooldownReset;
+                Debug.Log("Ran!");
             }
             if (missile && missileCooldown == 0)
             {
@@ -221,6 +222,6 @@ public class PlayerController : MonoBehaviour
     }
     public void AddPowerCapsule()
     {
-        ++powerCapsules;
+        powerCapsules = powerCapsules == 3 ? 1 : ++powerCapsules;
     }
 }

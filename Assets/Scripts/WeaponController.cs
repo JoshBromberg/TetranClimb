@@ -28,7 +28,6 @@ public class WeaponController : MonoBehaviour
         if (distanceTravelled >= maxDistance)
         {
             Destroy(gameObject);
-            //rBody.position -= new Vector2(0, 2) * speed;
         }
     }
 
@@ -43,7 +42,7 @@ public class WeaponController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (s == "Rock" || s == "Boundry")
+        else if (s == "Rock")
         {
             Destroy(gameObject);
         }
