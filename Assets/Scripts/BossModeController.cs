@@ -8,16 +8,24 @@ public class BossModeController : MonoBehaviour
     private AudioSource s;
     private float fadeOutTimer = 1;
     [SerializeField]
-    private AudioClip aircraftCarrier, poisonOfSnake;
+    private AudioClip aircraftCarrierStart, aircraftCarrierLoop, poisonOfSnake;
     private int zubRushTimer = 750, currentZub = 0;
     [SerializeField]
     private GameObject smallPlatform, zub;
-    [SerializeField]
-    private Transform[] zubSpawn = new Transform[15];
+    private Vector2[] zubSpawn = new Vector2[15];
     // Start is called before the first frame update
     void Start()
     {
         s = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        int iteration = 0;
+        for (int z=0; z<5; ++z)
+        {
+            for (int y=0; y<3; ++y)
+            {
+                zubSpawn[iteration] = new Vector2(-7+(z*3.5f), 28-(y*1.5f));
+                ++iteration;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -31,14 +39,20 @@ public class BossModeController : MonoBehaviour
                 s.volume = fadeOutTimer > 0 ? fadeOutTimer : 1;
                 if (fadeOutTimer <= 0)
                 {
-                    s.clip = aircraftCarrier;
+                    s.clip = aircraftCarrierStart;
+                    s.loop = false;
                 }
             }
             else if (zubRushTimer > 0)
             {
+                if (s.isPlaying == false)
+                {
+                    s.clip = aircraftCarrierLoop;
+                    s.loop = true;
+                }
                 if (zubRushTimer % 10 == 0)
                 {
-                    Instantiate(zub, zubSpawn[currentZub].position, zubSpawn[currentZub].rotation);
+                    Instantiate(zub, zubSpawn[currentZub], Quaternion.identity);
                     currentZub = currentZub + 1 >= zubSpawn.Length ? 0 : ++currentZub;
                 }
                 --zubRushTimer;

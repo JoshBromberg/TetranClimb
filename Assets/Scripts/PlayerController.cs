@@ -123,7 +123,6 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(attackObj, attackSpawn.position, body.rotation);
                 attackCooldown = attackCooldownReset;
-                Debug.Log("Ran!");
             }
             if (missile && missileCooldown == 0)
             {

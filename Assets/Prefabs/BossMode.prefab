@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7029539395460758201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,9 +70,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ae95e926b17ec4fafd5b50e42436f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aircraftCarrier: {fileID: 0}
-  poisonOfSnake: {fileID: 0}
-  smallPlatform: {fileID: 0}
+  aircraftCarrierStart: {fileID: 8300000, guid: 08587286527440a479116ef8f302853f,
+    type: 3}
+  aircraftCarrierLoop: {fileID: 8300000, guid: 0d5f4995aaecc3a48a54f02acc0d8904, type: 3}
+  poisonOfSnake: {fileID: 8300000, guid: f039254c43dddc44e8b7b68a089647c3, type: 3}
+  smallPlatform: {fileID: 1454849356529981315, guid: 63a2622ac28e0bf45a9fc0f99d2efe1b,
+    type: 3}
   zub: {fileID: 2533955110845895176, guid: bb22e7b0447601a4994a24f592e8d6cb, type: 3}
   zubSpawn:
   - {fileID: 0}
