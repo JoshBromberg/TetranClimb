@@ -25,9 +25,9 @@ public class GameController : MonoBehaviour
     }
     public void AddScore(int i, GameObject g, Transform t)
     {
-        score += i;
+        AddScore(i);
         Instantiate(g, t.position, t.rotation);
-        if (g.name.Contains("Big"))
+        if (g.name.Contains("Big") || i == 50)
         {
             Instantiate(powerCapsule, t.position, t.rotation);
         }

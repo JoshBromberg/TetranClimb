@@ -15,11 +15,11 @@ public class MissileController : EnemyController
         {
             case true:
                 xSpeed = speed;
-                ySpeed = xDif / yDif * speed;
+                ySpeed = yDif / xDif * speed;
                 break;
             case false:
                 ySpeed = speed;
-                xSpeed = yDif / xDif * speed;
+                xSpeed = xDif / yDif * speed;
                 break;
         }
         xSpeed = transform.position.x > t.x ? -xSpeed : xSpeed;
