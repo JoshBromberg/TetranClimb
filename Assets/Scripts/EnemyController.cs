@@ -12,6 +12,12 @@ public abstract class EnemyController : MonoBehaviour
     protected Rigidbody2D rBody;
     [SerializeField]
     private GameObject deathAnimation;
+    [SerializeField]
+    private AudioClip deathSound, victory;
+    [SerializeField]
+    protected GameObject audioPlayer;
+    public int Health { get { return health; } }
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +44,14 @@ public abstract class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(score, deathAnimation, transform);
+            audioPlayer.GetComponent<AudioSource>().clip = deathSound;
+            Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
             if (name.Contains("Core"))
             {
                 Destroy(GameObject.FindGameObjectWithTag("Tetran"));
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().clip = victory;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().loop = false;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Play();
             }
             else
             {

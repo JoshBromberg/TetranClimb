@@ -220,6 +220,9 @@ MonoBehaviour:
   score: 10
   deathAnimation: {fileID: 5393281050901829348, guid: 11697542df2195549a16f7a5f2caebbd,
     type: 3}
+  deathSound: {fileID: 8300000, guid: c5bdce57edbe7a943be193a817d3fb04, type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
   groundChecks:
   - {fileID: 8679005167268321725}
   - {fileID: 6736024575174446813}

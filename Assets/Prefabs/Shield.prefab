@@ -102,6 +102,10 @@ MonoBehaviour:
   score: 0
   deathAnimation: {fileID: 6727896920855928702, guid: 8ee2ea47a20387545b15d93e38318252,
     type: 3}
+  deathSound: {fileID: 8300000, guid: 45e7455aed24c864597af205eb34acb2, type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
+  hit: {fileID: 8300000, guid: c7791fcb4f7b9884581e5fa5887aeac8, type: 3}
 --- !u!50 &-8186778640158395900
 Rigidbody2D:
   serializedVersion: 4

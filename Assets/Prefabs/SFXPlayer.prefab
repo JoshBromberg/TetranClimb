@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7849831427988427067}
   - component: {fileID: 4968993279467117712}
-  - component: {fileID: 8893780941886275323}
+  - component: {fileID: 2858798301161015112}
   m_Layer: 0
   m_Name: SFXPlayer
   m_TagString: SFXPlayer
@@ -42,8 +42,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5bdce57edbe7a943be193a817d3fb04, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 7be61c58daef4c64f9175677a224489a, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -128,7 +128,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8893780941886275323
+--- !u!114 &2858798301161015112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3603079933502098796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd4e5588d2dfdd49b4ea87113c567cf, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b80a8c61c0da94abb58362db5775b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 200
+  time: 1

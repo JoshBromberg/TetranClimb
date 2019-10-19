@@ -168,4 +168,7 @@ MonoBehaviour:
   score: 20
   deathAnimation: {fileID: 6727896920855928702, guid: 8ee2ea47a20387545b15d93e38318252,
     type: 3}
+  deathSound: {fileID: 8300000, guid: 16e13b0b3c850f94dbbd6dd8e7456c23, type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
   missile: {fileID: 6374548167159973348, guid: e98d0263d4f30c24b941bcbe747ddc17, type: 3}

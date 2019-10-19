@@ -338,6 +338,11 @@ MonoBehaviour:
   score: 1000
   deathAnimation: {fileID: 9150401910290436343, guid: 2a65874b2cccc274989e99a05b43a70e,
     type: 3}
+  deathSound: {fileID: 8300000, guid: c42c50590d4210d43869b75a1f368f6f, type: 3}
+  victory: {fileID: 8300000, guid: e014a03a6612fad488e0708c9b09fff5, type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
+  hit: {fileID: 8300000, guid: c7791fcb4f7b9884581e5fa5887aeac8, type: 3}
 --- !u!1001 &1979027867441715366
 PrefabInstance:
   m_ObjectHideFlags: 0

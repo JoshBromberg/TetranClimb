@@ -186,6 +186,11 @@ MonoBehaviour:
   missileSpawn: {fileID: 4086750023686789970}
   laserSpawn: {fileID: 444926871181681523}
   body: {fileID: 8253994315303242745}
+  powerUp: {fileID: 8300000, guid: b38445c85ce3cd54fa3f434aa6428929, type: 3}
+  collectCapsule: {fileID: 8300000, guid: 8a11c5a9c5dcae64696f969db907c408, type: 3}
+  firing: {fileID: 8300000, guid: 7be61c58daef4c64f9175677a224489a, type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
 --- !u!1 &4321735754586026126
 GameObject:
   m_ObjectHideFlags: 0

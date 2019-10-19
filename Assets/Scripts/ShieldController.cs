@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class ShieldController : EnemyController
 {
+    [SerializeField]
+    private AudioClip hit;
+    int previousHealth;
     // Start is called before the first frame update
     protected override void SpecificStart() { }
 
     // Update is called once per frame
-    protected override void SpecificUpdate() { }
+    protected override void SpecificUpdate()
+    {
+        if (Health < previousHealth)
+        {
+            audioPlayer.GetComponent<AudioSource>().clip = hit;
+            Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
+        }
+        previousHealth = Health;
+    }
     protected override void Move() { }
 
     void OnTriggerEnter2D(Collider2D collider)

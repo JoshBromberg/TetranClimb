@@ -42,6 +42,12 @@ public class PlayerController : MonoBehaviour
     private int powerCapsules = 0;
     private bool[] canUpgrade = { true, true, true };
     #endregion
+    #region Audio Variables
+    [SerializeField]
+    private AudioClip powerUp, collectCapsule, firing;
+    [SerializeField]
+    private GameObject audioPlayer;
+    #endregion
 
     void Start()
     {
@@ -123,6 +129,8 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(attackObj, attackSpawn.position, body.rotation);
                 attackCooldown = attackCooldownReset;
+                audioPlayer.GetComponent<AudioSource>().clip = firing;
+                Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
             }
             if (missile && missileCooldown == 0)
             {
@@ -143,7 +151,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveSpeed += moveSpeedIncrement;
                 canUpgrade[0] = moveSpeed >= 2.5f * moveSpeedBase;
-                powerCapsules = 0;
+                SharedUpgradeCommands();
             }
             else if (powerCapsules == 2 && canUpgrade[1])
             {
@@ -156,7 +164,7 @@ public class PlayerController : MonoBehaviour
                 {
                     missile = true;
                 }
-                powerCapsules = 0;
+                SharedUpgradeCommands();
             }
             else if (powerCapsules == 3 && canUpgrade[2])
             {
@@ -169,7 +177,7 @@ public class PlayerController : MonoBehaviour
                 {
                     laser = true;
                 }
-                powerCapsules = 0;
+                SharedUpgradeCommands();
             }
         }
         #endregion
@@ -187,6 +195,12 @@ public class PlayerController : MonoBehaviour
             --laserCooldown;
         }
         #endregion
+    }
+    private void SharedUpgradeCommands()
+    {
+        powerCapsules = 0;
+        audioPlayer.GetComponent<AudioSource>().clip = powerUp;
+        Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
     }
     private void SetDefaultRotation()
     {
@@ -222,5 +236,7 @@ public class PlayerController : MonoBehaviour
     public void AddPowerCapsule()
     {
         powerCapsules = powerCapsules == 3 ? 1 : ++powerCapsules;
+        audioPlayer.GetComponent<AudioSource>().clip = collectCapsule;
+        Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
     }
 }
