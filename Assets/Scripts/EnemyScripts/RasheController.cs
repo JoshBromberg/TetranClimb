@@ -8,11 +8,13 @@ public class RasheController : EnemyController
     private bool horiz, fired;
     [SerializeField]
     private GameObject missile;
+    private float xSpeed;
     // Start is called before the first frame update
     protected override void SpecificStart()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         moving = true;
+        xSpeed = speed;
     }
 
     // Update is called once per frame
@@ -27,13 +29,13 @@ public class RasheController : EnemyController
                 Instantiate(missile, transform.position, transform.rotation);
                 fired = true;
             }
-            rBody.position += new Vector2(speed, 0);
+            rBody.position += new Vector2(xSpeed, 0);
         }
         else
         {
             rBody.position += new Vector2(0, speed);
             horiz = rBody.position.y > player.position.y;
-            speed = rBody.position.x > player.position.y ? -speed : speed;
+            xSpeed = rBody.position.x > player.position.y ? -speed : speed;
         }
     }
 }
