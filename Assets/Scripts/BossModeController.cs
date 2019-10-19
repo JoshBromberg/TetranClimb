@@ -68,7 +68,7 @@ public class BossModeController : MonoBehaviour
                     {
                         s.clip = poisonOfSnake;
                         s.Play();
-                        Instantiate(tetran, transform.position + new Vector3(0, 5), tetSpawn.rotation);
+                        Instantiate(tetran, transform.position + new Vector3(0, 6), tetSpawn.rotation);
                     }
                 }
             }

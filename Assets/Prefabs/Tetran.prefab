@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396039714126110769}
   - component: {fileID: 4564103054541802934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TetranArms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22a2815540217747ad4797cf42e35d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 0.5
+  spinSpeed: 0.5
+  missile: {fileID: 6374548167159973348, guid: e98d0263d4f30c24b941bcbe747ddc17, type: 3}
+  parent: {fileID: 396039714946563692}
 --- !u!1 &396039714946563682
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +64,7 @@ GameObject:
   - component: {fileID: 8201435965770733288}
   - component: {fileID: 1632141270161647120}
   - component: {fileID: 7951436765744396962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tetran
   m_TagString: Tetran
   m_Icon: {fileID: 0}
