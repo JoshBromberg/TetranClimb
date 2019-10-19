@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9150401910290436346}
   - component: {fileID: 9150401910290436341}
   - component: {fileID: 9150401910290436340}
+  - component: {fileID: 2342902807080738131}
   m_Layer: 0
   m_Name: BigCoreDeath
   m_TagString: Untagged
@@ -100,3 +101,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2342902807080738131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150401910290436343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b80a8c61c0da94abb58362db5775b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.25
