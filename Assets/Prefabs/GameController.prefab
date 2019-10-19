@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167781206415222146}
   - component: {fileID: 4167781206415222147}
+  - component: {fileID: -5648336221836502691}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -47,7 +48,17 @@ MonoBehaviour:
     type: 3}
   playerDeath: {fileID: 9150401910290436343, guid: 2a65874b2cccc274989e99a05b43a70e,
     type: 3}
-  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
-    type: 3}
   playerDeathSound: {fileID: 8300000, guid: 4c4f0690c654973488b03731c4978824, type: 3}
   defeatMusic: {fileID: 8300000, guid: fde2a3ea0ae1fdc4e95663de105a10db, type: 3}
+--- !u!114 &-5648336221836502691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167781206415222156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431b91ba7ad8a2b40bcd37acca002f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -270,4 +270,12 @@ public class PlayerController : MonoBehaviour
         Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
         g.AddScore(10);
     }
+    public void KonamiCode()
+    {
+        missile = true;
+        missileCooldownReset = attackCooldownReset;
+        laser = true;
+        laserDamage = laserDamageMax;
+        Damage(-(573-health));
+    }
 }
