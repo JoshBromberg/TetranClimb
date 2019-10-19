@@ -8,7 +8,15 @@ public class MissileController : EnemyController
     // Start is called before the first frame update
     protected override void SpecificStart()
     {
-        Vector3 t = GameObject.FindGameObjectWithTag("Player").transform.position;
+        Vector3 t;
+        try
+        {
+            t = GameObject.FindGameObjectWithTag("Player").transform.position;
+        }
+        catch (System.NullReferenceException)
+        {
+            t = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
+        }
         float xDif = Mathf.Abs(transform.position.x - t.x), yDif = Mathf.Abs(transform.position.y - t.y);
         bool xIsCloser =  xDif > yDif;
         switch (xIsCloser)

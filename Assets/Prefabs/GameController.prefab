@@ -45,3 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerCapsule: {fileID: 3583889658889064406, guid: d78fd07b5f7f9264da5c098f5e29f469,
     type: 3}
+  playerDeath: {fileID: 9150401910290436343, guid: 2a65874b2cccc274989e99a05b43a70e,
+    type: 3}
+  audioPlayer: {fileID: 3603079933502098796, guid: 32b93f30d90e4944b994c541590cd3f9,
+    type: 3}
+  playerDeathSound: {fileID: 8300000, guid: 4c4f0690c654973488b03731c4978824, type: 3}
+  defeatMusic: {fileID: 8300000, guid: fde2a3ea0ae1fdc4e95663de105a10db, type: 3}

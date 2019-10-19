@@ -33,6 +33,10 @@ public class BossModeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectsWithTag("Player").Length < 1)
+        {
+            active = false;
+        }
         if (active)
         {
             if (fadeOutTimer > 0)

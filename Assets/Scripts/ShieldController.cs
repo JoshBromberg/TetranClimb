@@ -29,10 +29,12 @@ public class ShieldController : EnemyController
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        /* Commented out for TAS shenanigens
         string t = collider.gameObject.tag;
         if (t == "Player" || t == "Foot" || t == "Body" || t == "Cannon")
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Damage(100);
         }
+        */
     }
 }

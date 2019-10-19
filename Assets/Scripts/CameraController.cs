@@ -6,9 +6,11 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private AudioClip loop;
+    [SerializeField]
+    private GameObject defeatText, victoryText;
     private Transform player;
     private AudioSource s;
-    private bool looped = false;
+    private bool looped, defeat, victory;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,20 @@ public class CameraController : MonoBehaviour
             s.loop = true;
             looped = true;
         }
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        try
+        {
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        }
+        catch (MissingReferenceException)
+        {
+            if (defeat == false)
+            {
+                defeatText.SetActive(true);
+            }
+        }
+    }
+    public void Victory()
+    {
+        victoryText.SetActive(true);
     }
 }

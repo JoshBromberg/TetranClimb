@@ -49,9 +49,11 @@ public abstract class EnemyController : MonoBehaviour
             if (name.Contains("Core"))
             {
                 Destroy(GameObject.FindGameObjectWithTag("Tetran"));
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().clip = victory;
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().loop = false;
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Play();
+                GameObject g = GameObject.FindGameObjectWithTag("MainCamera");
+                g.GetComponent<AudioSource>().clip = victory;
+                g.GetComponent<AudioSource>().loop = false;
+                g.GetComponent<AudioSource>().Play();
+                g.GetComponent<CameraController>().Victory();
             }
             else
             {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -49,12 +50,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject audioPlayer;
     #endregion
+    private GameController g;
+    private Text healthText;
 
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
         moveSpeedBase = moveSpeed;
         health = maximumHealth;
+        g = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>();
     }
 
     void Update()
@@ -252,9 +257,11 @@ public class PlayerController : MonoBehaviour
     public void Damage (int i)
     {
         health -= i;
+        healthText.text = "Health: " + health;
         if (health <= 0)
         {
-            //TODO: Death commands, likely a dramatic explosion then a death splashscreen
+            g.Defeat(transform);
+            Destroy(gameObject);
         }
     }
     public void AddPowerCapsule()
@@ -262,6 +269,6 @@ public class PlayerController : MonoBehaviour
         powerCapsules = powerCapsules == 3 ? 1 : ++powerCapsules;
         audioPlayer.GetComponent<AudioSource>().clip = collectCapsule;
         Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(10);
+        g.AddScore(10);
     }
 }
