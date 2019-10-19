@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private int health = 100;
     private int maximumHealth = 100;
     private int powerCapsules = 0;
+    public int PowerCapsules { get { return powerCapsules; } }
     private bool[] canUpgrade = { true, true, true };
     #endregion
     #region Audio Variables
