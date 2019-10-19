@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    /*
-     TODO:
-     Konami Code
-     Control Panel Handling
-         */
     #region Movement Variables
     [SerializeField]
     private float moveSpeed = 20, jumpSpeed = 800, maxSpeed = 15, moveSpeedIncrement = 5;
@@ -27,10 +22,10 @@ public class PlayerController : MonoBehaviour
     private Transform[] groundCheck = new Transform[2];
     #endregion
     #region Attack Variables
-    private int attackCooldown = 0, attackCooldownReset = 10, missileCooldown = 0, missileCooldownReset = /*25*/15, laserCooldown = 0, laserCooldownReset = 25, laserDamage = 3/*2*/, laserDamageMax = 5;
+    private int attackCooldown = 0, attackCooldownReset = 10, missileCooldown = 0, missileCooldownReset = 25, laserCooldown = 0, laserCooldownReset = 25, laserDamage = 2, laserDamageMax = 5;
     [SerializeField]
     private GameObject attackObj, missileObj, laserObj;
-    private bool missile = true, laser = true;
+    private bool missile = false, laser = false;
     [SerializeField]
     private Transform attackSpawn, missileSpawn, laserSpawn, body;
     #region Propeties
