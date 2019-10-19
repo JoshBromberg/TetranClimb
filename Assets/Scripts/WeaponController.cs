@@ -37,7 +37,7 @@ public class WeaponController : MonoBehaviour
         if (s == "Enemy")
         {
             col.gameObject.GetComponent<EnemyController>().Damage(damage);
-            if (destroyOnHit)
+            if (destroyOnHit || col.gameObject.name.Contains("Shield") || col.gameObject.name.Contains("Core"))
             {
                 Destroy(gameObject);
             }

@@ -58,10 +58,6 @@ public class TetranArms : MonoBehaviour
         {
             centre += new Vector2(0, spinSpeed/100);
             --backwardsTimer;
-            if (backwardsTimer <= 0)
-            {
-                //Attackable
-            }
         }
     }
 }

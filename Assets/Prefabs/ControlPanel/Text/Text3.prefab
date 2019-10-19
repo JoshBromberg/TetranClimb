@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5025495683769617102}
   - component: {fileID: 6721893765682570486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -65,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -153121905
-  m_SortingLayer: 1
+  m_SortingLayerID: -1096819983
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af07fc40ffd9d3e4c80fe2da08fa3263, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
