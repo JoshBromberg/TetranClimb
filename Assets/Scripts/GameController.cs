@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -8,10 +9,11 @@ public class GameController : MonoBehaviour
     private int[] fansActive = { 4, 4, 4, 4 };
     [SerializeField]
     private GameObject powerCapsule;
+    private Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int i)
     {
         score += i;
+        scoreText.text = "Score: " + score;
     }
     public void AddScore(int i, GameObject g, Transform t)
     {
