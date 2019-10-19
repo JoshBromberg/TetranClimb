@@ -262,5 +262,6 @@ public class PlayerController : MonoBehaviour
         powerCapsules = powerCapsules == 3 ? 1 : ++powerCapsules;
         audioPlayer.GetComponent<AudioSource>().clip = collectCapsule;
         Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(10);
     }
 }
