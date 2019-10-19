@@ -6,7 +6,7 @@ public class TetranArms : MonoBehaviour
 {
     [SerializeField]
     private float spinSpeed;
-    private float rotationIncrement;
+    private float rotationIncrement, angle, forwardsTimer = 1000, backwardsTimer = 500;
     [SerializeField]
     private GameObject missile;
     private int missileCooldown, missileCooldownReset = 250;
@@ -14,7 +14,6 @@ public class TetranArms : MonoBehaviour
     [SerializeField]
     private Transform parent;
     private Vector2 centre;
-    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +49,19 @@ public class TetranArms : MonoBehaviour
 
         Vector2 offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * 1f;
         parent.position = centre + offset;
-        //parent.position += new Vector3(Mathf.Sin(movementTimer/50), Mathf.Cos(movementTimer/50));
+        if (forwardsTimer > 0)
+        {
+            centre -= new Vector2(0, spinSpeed/100);
+            --forwardsTimer;
+        }
+        else if (backwardsTimer > 0)
+        {
+            centre += new Vector2(0, spinSpeed/100);
+            --backwardsTimer;
+            if (backwardsTimer <= 0)
+            {
+                //Attackable
+            }
+        }
     }
 }

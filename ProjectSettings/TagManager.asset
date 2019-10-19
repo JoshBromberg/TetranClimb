@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - Arm
   - Tetran
+  - AttackSpawn
   layers:
   - Default
   - TransparentFX

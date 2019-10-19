@@ -19,7 +19,8 @@ public class CollisionIgnore : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.collider.gameObject.tag=="Tetran" && collision.otherCollider.gameObject.tag == "Arm") || (collision.collider.gameObject.tag == "Arm" && collision.otherCollider.gameObject.tag == "Tetran"))
+        string t = collision.collider.gameObject.tag;
+        if (t != "Player" && t != "Body" && t != "Foot" && t != "Cannon")
         {
             Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
         }

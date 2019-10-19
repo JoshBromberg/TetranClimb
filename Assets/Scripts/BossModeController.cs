@@ -68,7 +68,7 @@ public class BossModeController : MonoBehaviour
                     {
                         s.clip = poisonOfSnake;
                         s.Play();
-                        Instantiate(tetran, transform.position + new Vector3(0, 6), tetSpawn.rotation);
+                        Instantiate(tetran, transform.position + new Vector3(0, 8.5f), tetSpawn.rotation);
                     }
                 }
             }
@@ -84,6 +84,17 @@ public class BossModeController : MonoBehaviour
             b.GetComponent<BoundryController>().playerSpawn = new Vector2(0, 23.5f);
             Instantiate(smallPlatform, new Vector2(-0.94f, 21.5f), Quaternion.identity);
             Instantiate(smallPlatform, new Vector2(0.94f, 21.5f), Quaternion.identity);
+            string[] st = { "Rock", "Enemy" };
+            foreach (string s in st)
+            {
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
+                {
+                    if (g.transform.position.y < 21.5f)
+                    {
+                        Destroy(g);
+                    }
+                }
+            }
             active = true;
         }
     }
