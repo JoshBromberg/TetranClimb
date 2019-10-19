@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     {
         AddScore(i);
         Instantiate(g, t.position, t.rotation);
-        if (i == 100 || i == 50)
+        if (i >= 50)
         {
             Instantiate(powerCapsule, t.position, t.rotation);
         }

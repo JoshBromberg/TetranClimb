@@ -6,7 +6,7 @@ public class BossModeController : MonoBehaviour
 {
     private bool active = false;
     private AudioSource s;
-    private float fadeOutTimer = 1;
+    private float fadeOutTimer = 1, newFadeTimer = 1;
     [SerializeField]
     private AudioClip aircraftCarrierStart, aircraftCarrierLoop, poisonOfSnake;
     private int zubRushTimer = 750, currentZub = 0;
@@ -18,11 +18,11 @@ public class BossModeController : MonoBehaviour
     {
         s = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         int iteration = 0;
-        for (int z=0; z<5; ++z)
+        for (int y = 0; y < 3; ++y)
         {
-            for (int y=0; y<3; ++y)
+            for (int z = 0; z < 5; ++z)
             {
-                zubSpawn[iteration] = new Vector2(-7+(z*3.5f), 28-(y*1.5f));
+                zubSpawn[iteration] = new Vector2(-7+(z*3.5f), 27-y);
                 ++iteration;
             }
         }
@@ -41,6 +41,7 @@ public class BossModeController : MonoBehaviour
                 {
                     s.clip = aircraftCarrierStart;
                     s.loop = false;
+                    s.Play();
                 }
             }
             else if (zubRushTimer > 0)
@@ -49,6 +50,7 @@ public class BossModeController : MonoBehaviour
                 {
                     s.clip = aircraftCarrierLoop;
                     s.loop = true;
+                    s.Play();
                 }
                 if (zubRushTimer % 10 == 0)
                 {
@@ -58,10 +60,12 @@ public class BossModeController : MonoBehaviour
                 --zubRushTimer;
                 if (zubRushTimer <= 100)
                 {
-                    s.volume = zubRushTimer > 0 ? zubRushTimer / 100 : 1;
+                    s.volume = zubRushTimer > 0 ? newFadeTimer: 1;
+                    newFadeTimer -= 0.01f;
                     if (zubRushTimer == 0)
                     {
                         s.clip = poisonOfSnake;
+                        s.Play();
                         //instantiate Tetran
                     }
                 }
@@ -70,10 +74,10 @@ public class BossModeController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (active == false && col.gameObject.tag == "Player")
+        if (active == false && col.gameObject.tag == "Body")
         {
             GameObject b = GameObject.FindGameObjectWithTag("Boundry");
-            b.transform.position = new Vector2(0, 40);
+            b.transform.position = new Vector2(0, 35);
             b.transform.localScale = new Vector3(30, 30, 1);
             b.GetComponent<BoundryController>().playerSpawn = new Vector2(0, 23.5f);
             Instantiate(smallPlatform, new Vector2(-0.94f, 21.5f), Quaternion.identity);

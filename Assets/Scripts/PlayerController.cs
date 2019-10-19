@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
     private Transform[] groundCheck = new Transform[2];
     #endregion
     #region Attack Variables
-    private int attackCooldown = 0, attackCooldownReset = 10, missileCooldown = 0, missileCooldownReset = 25, laserCooldown = 0, laserCooldownReset = 25, laserDamage = 2, laserDamageMax = 5;
+    private int attackCooldown = 0, attackCooldownReset = 10, missileCooldown = 0, missileCooldownReset = /*25*/15, laserCooldown = 0, laserCooldownReset = 25, laserDamage = 3/*2*/, laserDamageMax = 5;
     [SerializeField]
     private GameObject attackObj, missileObj, laserObj;
-    private bool missile = false, laser = false;
+    private bool missile = true, laser = true;
     [SerializeField]
     private Transform attackSpawn, missileSpawn, laserSpawn, body;
     #region Propeties

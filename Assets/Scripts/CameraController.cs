@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     private AudioClip loop;
     private Transform player;
     private AudioSource s;
+    private bool looped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,12 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (s.isPlaying == false)
+        if (s.isPlaying == false && looped == false)
         {
             s.clip = loop;
             s.Play();
             s.loop = true;
+            looped = true;
         }
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
