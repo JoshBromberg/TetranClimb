@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     private int score, waitTimer;
     private int[] fansActive = { 4, 4, 4, 4 };
     [SerializeField]
-    private GameObject powerCapsule, playerDeath, audioPlayer;
+    private GameObject powerCapsule, playerDeath;
     [SerializeField]
     private AudioClip playerDeathSound, defeatMusic;
     private Text scoreText;

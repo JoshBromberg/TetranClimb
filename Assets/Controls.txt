@@ -1,0 +1,6 @@
+Axis       : Command
+--------------------
+Fire1      : Shoot
+Fire2      : Upgrade
+Jump       : Jump
+Horizontal : Movement

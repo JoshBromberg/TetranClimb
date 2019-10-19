@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private int powerCapsules = 0;
     public int PowerCapsules { get { return powerCapsules; } }
     private bool[] canUpgrade = { true, true, true };
+    [SerializeField]
+    private AudioClip hit;
     #endregion
     #region Audio Variables
     [SerializeField]
@@ -257,6 +259,8 @@ public class PlayerController : MonoBehaviour
     public void Damage (int i)
     {
         health -= i;
+        audioPlayer.GetComponent<AudioSource>().clip = hit;
+        Instantiate(audioPlayer, GameObject.FindGameObjectWithTag("AudioPlayer").transform);
         healthText.text = "Health: " + health;
         if (health <= 0)
         {

@@ -17,6 +17,8 @@ TagManager:
   - AudioPlayer
   - SFXPlayer
   - ControlText
+  - ScoreText
+  - HealthText
   layers:
   - Default
   - TransparentFX
