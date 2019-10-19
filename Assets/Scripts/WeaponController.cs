@@ -42,7 +42,7 @@ public class WeaponController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (s == "Rock")
+        else if (s == "Rock" || s == "Arm" || s == "Tetran")
         {
             Destroy(gameObject);
         }

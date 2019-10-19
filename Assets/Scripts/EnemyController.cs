@@ -38,7 +38,14 @@ public abstract class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(score, deathAnimation, transform);
-            Destroy(gameObject);
+            if (name.Contains("Core"))
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Tetran"));
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     protected abstract void Move();
