@@ -151,7 +151,11 @@ public class PlayerController : MonoBehaviour
             if (powerCapsules == 1 && canUpgrade[0])
             {
                 moveSpeed += moveSpeedIncrement;
-                canUpgrade[0] = moveSpeed >= 2.5f * moveSpeedBase;
+                canUpgrade[0] = moveSpeed < 2.5f * moveSpeedBase;
+                if (canUpgrade[0] == false)
+                {
+                    RemoveText(1);
+                }
                 SharedUpgradeCommands();
             }
             else if (powerCapsules == 2 && canUpgrade[1])
@@ -159,7 +163,11 @@ public class PlayerController : MonoBehaviour
                 if (missile)
                 {
                     missileCooldownReset -= 5;
-                    canUpgrade[1] = missileCooldownReset == attackCooldownReset;
+                    canUpgrade[1] = missileCooldownReset > attackCooldownReset;
+                    if (canUpgrade[1] == false)
+                    {
+                        RemoveText(2);
+                    }
                 }
                 else
                 {
@@ -172,7 +180,11 @@ public class PlayerController : MonoBehaviour
                 if (laser)
                 {
                     ++laserDamage;
-                    canUpgrade[2] = laserDamage == laserDamageMax;
+                    canUpgrade[2] = laserDamage < laserDamageMax;
+                    if (canUpgrade[2] == false)
+                    {
+                        RemoveText(3);
+                    }
                 }
                 else
                 {
@@ -196,6 +208,17 @@ public class PlayerController : MonoBehaviour
             --laserCooldown;
         }
         #endregion
+    }
+    private void RemoveText(int i)
+    {
+
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("ControlText"))
+        {
+            if (g.GetComponent<ControlTextController>().Instance == i)
+            {
+                Destroy(g);
+            }
+        }
     }
     private void SharedUpgradeCommands()
     {

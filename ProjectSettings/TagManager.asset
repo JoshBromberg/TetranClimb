@@ -15,7 +15,8 @@ TagManager:
   - Tetran
   - AttackSpawn
   - AudioPlayer
-  - Player1Health
+  - SFXPlayer
+  - ControlText
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - 
   - 
   - Foreground
-  - 
-  - 
+  - Control Panel
+  - Control Text
   - 
   - 
   - 
