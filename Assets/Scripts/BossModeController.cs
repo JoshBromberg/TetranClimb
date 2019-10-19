@@ -11,8 +11,10 @@ public class BossModeController : MonoBehaviour
     private AudioClip aircraftCarrierStart, aircraftCarrierLoop, poisonOfSnake;
     private int zubRushTimer = 750, currentZub = 0;
     [SerializeField]
-    private GameObject smallPlatform, zub;
+    private GameObject smallPlatform, zub, tetran;
     private Vector2[] zubSpawn = new Vector2[15];
+    [SerializeField]
+    private Transform tetSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,7 @@ public class BossModeController : MonoBehaviour
                     s.loop = true;
                     s.Play();
                 }
-                if (zubRushTimer % 10 == 0)
+                if (zubRushTimer % 25 == 0)
                 {
                     Instantiate(zub, zubSpawn[currentZub], Quaternion.identity);
                     currentZub = currentZub + 1 >= zubSpawn.Length ? 0 : ++currentZub;
@@ -66,7 +68,7 @@ public class BossModeController : MonoBehaviour
                     {
                         s.clip = poisonOfSnake;
                         s.Play();
-                        //instantiate Tetran
+                        Instantiate(tetran, transform.position + new Vector3(0, 5), tetSpawn.rotation);
                     }
                 }
             }

@@ -10,6 +10,9 @@ TagManager:
   - Weapon
   - Body
   - Boundry
+  - Enemy
+  - Arm
+  - Tetran
   layers:
   - Default
   - TransparentFX
